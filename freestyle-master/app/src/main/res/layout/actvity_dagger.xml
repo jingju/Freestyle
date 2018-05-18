@@ -8,6 +8,22 @@
         android:id="@+id/tv_modletest"
         android:text="ModuleTest"
         style="@style/common_item_style"/>
+    <TextView
+        android:id="@+id/tv_scopetest"
+        android:text="ScopeTest"
+        style="@style/common_item_style"/>
+    <TextView
+        android:id="@+id/tv_subcomponent"
+        android:text="SubComponent"
+        style="@style/common_item_style"/>
+    <TextView
+        android:id="@+id/tv_dependence"
+        android:text="Dependence"
+        style="@style/common_item_style"/>
+    <TextView
+        android:id="@+id/tv_extendtest"
+        android:text="ExtendTest"
+        style="@style/common_item_style"/>
 
 
 

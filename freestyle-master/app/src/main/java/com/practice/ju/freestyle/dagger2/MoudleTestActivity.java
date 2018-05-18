@@ -9,6 +9,7 @@ import android.util.Log;
 import com.practice.ju.freestyle.R;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * Created by guangju on 2018/5/17.
@@ -19,11 +20,26 @@ public class MoudleTestActivity extends AppCompatActivity{
     @Inject
     Person mPerson;
 
+    @Inject
+    @Named("male")
+    Person mMale;
+
+    @Inject
+    @Named("female")
+    Person mFemale;
+
+    @Inject
+    @PersonQualifier
+    Person mPersonQualifier;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moudle_test);
         DaggerPersonComponent.builder().dateMoudle(new DateMoudle()).build().inject(this);
         Log.i(TAG,mPerson.getName());
+        Log.i(TAG,mMale.getName());
+        Log.i(TAG,mFemale.getName());
+        Log.i(TAG,mPersonQualifier.getName());
     }
 }

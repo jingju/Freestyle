@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".AppApplication.App"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -19,6 +20,10 @@
 
         <activity android:name=".dagger2.DaggerActivity"/>
         <activity android:name=".dagger2.MoudleTestActivity"/>
+        <activity android:name=".dagger2.SingletonTestActivity"/>
+        <activity android:name=".dagger2.whole.DependenceTestActivity"/>
+        <activity android:name=".dagger2.whole.SubComponentTestActivity"/>
+        <activity android:name=".dagger2.whole.ExtendTestActivity"/>
     </application>
 
 </manifest>
