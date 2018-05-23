@@ -4,31 +4,44 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.practice.ju.freestyle"
-        minSdkVersion 14
+        minSdkVersion project.MINI_SDK_VERSION
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    api 'com.android.support:appcompat-v7:26.1.0'
+    api 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    compile 'com.google.dagger:dagger:2.0.2'
-    compile 'com.jakewharton:butterknife:8.4.0'
+    api 'com.google.dagger:dagger:2.0.2'
+    api 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     provided 'javax.annotation:javax.annotation-api:1.2'
+
+    //api和compile功能相同 implementation代表只有本项目依赖该库，当作为库时，不会传递给项目
+    api deps.room.runtime
+    api deps.room.rxjava2
+    annotationProcessor deps.room.compiler
 }

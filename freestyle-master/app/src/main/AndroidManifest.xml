@@ -24,6 +24,7 @@
         <activity android:name=".dagger2.whole.DependenceTestActivity"/>
         <activity android:name=".dagger2.whole.SubComponentTestActivity"/>
         <activity android:name=".dagger2.whole.ExtendTestActivity"/>
+        <activity android:name=".room.RoomActivity"/>
     </application>
 
 </manifest>
