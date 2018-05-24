@@ -1,0 +1,71 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "0d37a43671f078fef118044825fe98b6",
+    "entities": [
+      {
+        "tableName": "Students",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`studentid` INTEGER NOT NULL, `studentname` TEXT, `sex` TEXT, PRIMARY KEY(`studentid`))",
+        "fields": [
+          {
+            "fieldPath": "mId",
+            "columnName": "studentid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mName",
+            "columnName": "studentname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mSex",
+            "columnName": "sex",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "studentid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "class",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`classid` INTEGER NOT NULL, `classname` TEXT, PRIMARY KEY(`classid`))",
+        "fields": [
+          {
+            "fieldPath": "mClassId",
+            "columnName": "classid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mClassName",
+            "columnName": "classname",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "classid"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"0d37a43671f078fef118044825fe98b6\")"
+    ]
+  }
+}

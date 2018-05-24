@@ -50,7 +50,7 @@ public class RoomActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_insert:
-                final Student student = new Student(1, "第一个");
+                final Student student = new Student(1, "第一个","男");
                 appExecutors.diskIO().execute(new Runnable() {
                     @Override
                     public void run() {
@@ -67,7 +67,9 @@ public class RoomActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 tvShowTest.setText("id=" + student1.mId
-                                        + "name=" + student1.mName);
+                                        + "name=" + student1.mName
+                                        + "sex"+student1.mSex
+                                );
                             }
                         });
                     }

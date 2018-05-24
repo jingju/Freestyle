@@ -6,6 +6,8 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
+import java.util.List;
+
 import io.reactivex.Flowable;
 import io.reactivex.FlowableTransformer;
 
@@ -21,6 +23,13 @@ public interface StudentDao {
      */
     @Query("SELECT * FROM students LIMIT 1")
     Student getStudent();
+
+    /**
+     * 在数据库中查询所有的student，
+     * @return
+     */
+    @Query("SELECT * FROM students")
+    List<Student> getStudents();
 
     /**
      * 插入，当有相同的Student时，进行替换.

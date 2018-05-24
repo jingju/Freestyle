@@ -16,9 +16,14 @@ public class Student {
     @ColumnInfo(name = "studentname")
     public String mName;
 
-    public Student(int mId, String mName) {
+    //版本2 新增字段
+    @ColumnInfo(name = "sex")
+    public String mSex;
+
+    public Student(int mId, String mName,String sex) {
         this.mId = mId;
         this.mName = mName;
+        mSex=sex;
     }
 
 //    public String getstudentname() {
