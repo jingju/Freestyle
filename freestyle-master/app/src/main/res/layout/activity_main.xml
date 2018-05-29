@@ -18,6 +18,10 @@
             android:id="@+id/tv_room"
             android:text="room"
             style="@style/common_item_style" />
+    <TextView
+            android:id="@+id/tv_databinding"
+            android:text="databinding"
+            style="@style/common_item_style" />
     <!--</LinearLayout>-->
 
 

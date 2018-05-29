@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.practice.ju.freestyle">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -25,6 +26,7 @@
         <activity android:name=".dagger2.whole.SubComponentTestActivity"/>
         <activity android:name=".dagger2.whole.ExtendTestActivity"/>
         <activity android:name=".room.RoomActivity"/>
+        <activity android:name=".DataBinding.DataBindingActivity"/>
     </application>
 
 </manifest>

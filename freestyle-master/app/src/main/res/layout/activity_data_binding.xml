@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--todo 根标签必须是layout-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.util.SparseArray"/>
+        <import type="java.util.Map"/>
+        <import type="java.util.List"/>
+        <variable name="list" type="List&lt;String&gt;"/>
+        <variable name="sparse" type="SparseArray&lt;String&gt;"/>
+        <variable name="map" type="Map&lt;String, String&gt;"/>
+        <variable name="index" type="int"/>
+        <variable name="key" type="String"/>
+
+        <variable
+            name="user"
+            type="com.practice.ju.freestyle.DataBinding.User" />
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_user"
+            style="@style/common_item_style"
+            android:text="@{user.name}" />
+        <TextView
+            android:id="@+id/tv_databinding"
+            style="@style/common_item_style"
+            android:text="@{String.valueOf(1)}" />
+        <TextView
+            android:id="@+id/tv_"
+            style="@style/common_item_style"
+            android:text="@{list.size()}" />
+
+    </LinearLayout>
+</layout>

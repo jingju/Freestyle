@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion '27.0.3'
     defaultConfig {
         applicationId "com.practice.ju.freestyle"
         minSdkVersion project.MINI_SDK_VERSION
@@ -24,24 +25,38 @@ android {
         }
     }
 
+
+    dataBinding {
+        enabled = true
+    }
 }
+
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation ('com.android.support:appcompat-v7:27.1.1'){
+        exclude module: 'support-v4'
+    }
     api 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation ('com.android.support.test:runner:1.0.2'){
+        exclude module: 'support-v4'
+    }
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     api 'com.google.dagger:dagger:2.0.2'
     api 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.0.2'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    provided 'javax.annotation:javax.annotation-api:1.2'
+    implementation 'javax.annotation:javax.annotation-api:1.2'
 
     //api和compile功能相同 implementation代表只有本项目依赖该库，当作为库时，不会传递给项目
     api deps.room.runtime
     api deps.room.rxjava2
     annotationProcessor deps.room.compiler
+
+    annotationProcessor deps.databinding.compiler
+
+
 }

@@ -1,6 +1,7 @@
 package com.practice.ju.freestyle.room;
 
 import android.content.Context;
+import android.content.Loader;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -33,6 +34,10 @@ public class RoomActivity extends AppCompatActivity {
     StudentDao mStduDao;
     private AppExecutors appExecutors;
 
+
+    public static final int  LOADER_ID=202;
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,11 @@ public class RoomActivity extends AppCompatActivity {
         mContext = this;
         mStduDao = CommonDateBase.getINSTANCE(mContext).studentDao();
         appExecutors = new AppExecutors();
+
+
+        Loader<Object> loader = getLoaderManager().getLoader(LOADER_ID);
+
+
 
 
     }
